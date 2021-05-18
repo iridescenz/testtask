@@ -1,4 +1,4 @@
-.card-container {
+.li-container {
   display: grid;
 } 
 .card  {
@@ -7,6 +7,16 @@
 html {
   font-size: 15px;
   margin: 0;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column!important;
+  }
+
 }
 
 :root {
@@ -17,13 +27,52 @@ html {
   --blue: #205EFF;
 }
 
-header {
-  width: 90vw;
+.header {
+  width: 100vw;
   height: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  border-bottom: 1px solod var(--light-grey)
 }
-header > span {
-  width: 5vw;
+.header > header {
+  margin-left: 2rem;
+}
+
+.header > div {
+  margin: auto;
+  margin-right: 24px;
+}
+
+.plan-name {
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.plan-name > div {
+  margin-left: 4rem;
+}
+.plan {
+  width: 40vw;
+}
+
+.subscribe-plan {
+  width: 60vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  width: 11,4rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr );
+  gap: 2rem;
 }
