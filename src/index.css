@@ -1,0 +1,29 @@
+.card-container {
+  display: grid;
+} 
+.card  {
+  border: 3px solid red;
+}
+html {
+  font-size: 15px;
+  margin: 0;
+}
+
+:root {
+  --white: #F3F4F5;
+  --hcolor: #2C3143;
+  --light-grey: #969BAE;
+  --grey: #6773A0;
+  --blue: #205EFF;
+}
+
+header {
+  width: 90vw;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+header > span {
+  width: 5vw;
+}
