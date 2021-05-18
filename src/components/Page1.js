@@ -18,7 +18,7 @@ const Page1 = () => {
   return (
     <div className='container'>
       <div className='subscribe-plan'>
-        <h2>План подписки</h2>
+        <h5 className='bold-header'>План подписки</h5>
         <div className='card-container'>
           {content.map((el) => (
             <Card
@@ -37,6 +37,8 @@ const Page1 = () => {
                 }} />
           ))}
         </div>
+        <section>
+        <h5 className='bold-header'>Количество слотов</h5>
         <form className='form'>
           <input
             className='input'
@@ -71,6 +73,7 @@ const Page1 = () => {
             </button>
           </div>
         </form>
+        </section>
         <div className='footer'>
           <button className='next'>Продолжить</button>
           <div className='progress'>
@@ -80,18 +83,27 @@ const Page1 = () => {
         </div>
       </div>
       <div className='plan'>
-        <h2>Ваш запрос</h2>
+      <h5 className='bold-header'>Ваш запрос </h5>
         <div className='plan-name'>
           {plan === null ? <div>План не выбран</div> : `План "${plan}"`}
           {() => setPrice(price)}
-          { price === 0 ? <div> 0 </div> : <div>{price} </div>}
+          { price === 0 ? <div> 0 </div> : <div>{price.toLocaleString("en-US", {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                    style: "currency",
+                    currency: "USD",
+                  })} </div>}
         </div>
-        <div>Итого: {price * slots}</div>
+        <div>Итого:{(price * slots).toLocaleString("en-US", {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                    style: "currency",
+                    currency: "USD",
+                  }) }</div>
         <div className='balance'>
           <div>Ваш баланс:{` ${user.balance}`}</div>
           <div className='footer'>
             <button className='balance-check'>Запросить</button> 
-            <h1>{plan}</h1>
           </div>
         </div>
       </div>

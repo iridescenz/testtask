@@ -69,6 +69,7 @@ html {
 .subscribe-plan {
   width: 60vw;
   border-right: 1px solid var( --border-color);
+  font-size: 15px;
 
 }
 
