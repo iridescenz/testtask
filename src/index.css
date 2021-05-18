@@ -47,7 +47,7 @@ html {
 }
 
 .header > div {
-  margin: auto;
+  margin-left: auto;
   margin-right: 24px;
   width: 229px;
 }

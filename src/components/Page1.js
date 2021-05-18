@@ -25,7 +25,7 @@ const Page1 = () => {
               header={el.header}
               price={el.price}
               key={el.ind}
-              onClick={async(e) => {
+              onClick={(e) => {
                 e.preventDefault();
                 setPlan(el.header);
                 const element = plans.filter(el => el.name == plan);
@@ -94,14 +94,14 @@ const Page1 = () => {
                     currency: "USD",
                   })} </div>}
         </div>
-        <div>Итого:{(price * slots).toLocaleString("en-US", {
+        <div>Итого: {(price * slots).toLocaleString("en-US", {
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 2,
                     style: "currency",
                     currency: "USD",
                   }) }</div>
         <div className='balance'>
-          <div>Ваш баланс:{` ${user.balance}`}</div>
+          <div>Ваш баланс: {` ${user.balance}`}</div>
           <div className='footer'>
             <button className='balance-check'>Запросить</button> 
           </div>
