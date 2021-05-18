@@ -68,7 +68,7 @@ html {
   flex-direction: row;
 }
 .card {
-  width: 11,4rem;
+  min-width: 172px;
 }
 
 .card-container {
