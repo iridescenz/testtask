@@ -25,6 +25,7 @@ html {
   --light-grey: #969BAE;
   --grey: #6773A0;
   --blue: #205EFF;
+  --border-color: #F3F4F5;
 }
 
 .header {
@@ -34,7 +35,7 @@ html {
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  border-bottom: 1px solod var(--light-grey)
+  border-bottom: 1px solid var( --border-color)
 }
 .header > header {
   margin-left: 2rem;
@@ -61,6 +62,8 @@ html {
 
 .subscribe-plan {
   width: 60vw;
+  border-right: 1px solid var( --border-color);
+
 }
 
 .container {
@@ -69,10 +72,12 @@ html {
 }
 .card {
   min-width: 172px;
+  cursor: pointer;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: repeat( 3, 1fr );
+  border-bottom: 1px solid var( --border-color);
   gap: 2rem;
 }
