@@ -85,12 +85,7 @@ const Page1 = () => {
             <div> 0 </div>
           ) : (
             <div>
-              {price.toLocaleString('en-US', {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 2,
-                style: 'currency',
-                currency: 'USD',
-              })}{' '}
+              {price}
             </div>
           )}
         </div>

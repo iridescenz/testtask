@@ -8,6 +8,7 @@ html {
   font-size: 15px;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background-color: FFFFFF;
 }
 @media (max-width: 600px) {
   html {
@@ -19,6 +20,11 @@ html {
   }
 
 }
+.page-container {
+  margin: 0 auto;
+  width: 878px;
+  height: 477px;
+}
 
 :root {
   --white: #F3F4F5;
@@ -29,27 +35,31 @@ html {
   --border-color: #F3F4F5;
 }
 
+
 .header {
-  width: 100vw;
-  height: 4rem;
+  height: 59px;
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
   border-bottom: 1px solid var( --border-color);
-  font-size: 1.2rem;
-  line-height: 22,5px;
-  font-weight: 700;
   color:var(--hcolor)
 }
-.header > header {
-  margin-left: 2rem;
+
+.page-title {
+margin-left: 2rem;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 23px;
+letter-spacing: -0.01em;
+text-align: left;
 }
 
-.header > div {
+.close-icon {
   margin-left: auto;
   margin-right: 24px;
-  width: 229px;
 }
 
 .plan-name {

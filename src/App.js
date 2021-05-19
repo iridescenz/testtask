@@ -9,7 +9,7 @@ function App() {
   <Header />
   <Page1 />
   <Footer />
-  </>
+  </div>
   )
 }
 
