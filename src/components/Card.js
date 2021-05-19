@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Card = ({ header, price, onClick }) => {
   const plans = [
@@ -6,6 +6,7 @@ const Card = ({ header, price, onClick }) => {
     { name: 'Стандарт+', slots: 15, countries: 74, price: 99 },
     { name: 'Премиум', slots: 10, countries: 90, price: 119 },
   ];
+
   return (
     <div className='card' onClick={onClick}>
       <h3>{header}</h3>

@@ -15,6 +15,7 @@ const Page1 = () => {
   const [plan, setPlan] = useState(null);
   const [price, setPrice] = useState(0);
 
+
   const fetchData = (e) => {
     e.preventDefault();
     console.log('Fetching data')
@@ -30,7 +31,7 @@ const Page1 = () => {
         <h5 className='bold-header'>План подписки</h5>
         <div className='card-container'>
           {content.map((el) => (
-            <Card
+            <Card 
               header={el.header}
               price={el.price}
               key={el.ind}
