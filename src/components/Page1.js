@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './Card';
 import { content, user } from './data';
+import axios from 'axios';
 
 const Page1 = () => {
   const plans = [
@@ -13,6 +14,15 @@ const Page1 = () => {
   const [step, setStep] = useState('1/3');
   const [plan, setPlan] = useState(null);
   const [price, setPrice] = useState(0);
+
+  const fetchData = (e) => {
+    e.preventDefault();
+    console.log('Fetching data')
+    axios
+    .get(`url`)
+    .then()
+    .catch();
+  }
 
   return (
     <div className='container'>
@@ -84,16 +94,16 @@ const Page1 = () => {
           {price === 0 ? (
             <div> 0 </div>
           ) : (
-            <div>
+            <div className='price'>
               {price}
             </div>
           )}
         </div>
         <div>Итого: {price * slots}</div>
         <div className='balance'>
-          <div>Ваш баланс: {` ${user.balance}`}</div>
+          <div>Ваш баланс: <span className='price'>{` ${user.balance}`}</span></div>
           <div className='footer'>
-            <button className='balance-check'>Запросить</button>
+            <button className='balance-check' onClick={fetchData}>Запросить</button>
           </div>
         </div>
       </div>

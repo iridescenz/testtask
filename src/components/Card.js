@@ -17,14 +17,14 @@ const Card = ({ header, price, onClick }) => {
               <>
                 <li key={el.slots}>От {el.slots} слотов,</li>
                 <li key={el.countries}>{el.countries} стран ГЕО,</li>
-                <li key={el.price}>
+                <li className='price' key={el.price}>
                   {el.price} {` за слот`}
                 </li>
               </>
             );
           })}
       </ul>
-      <div>{price}</div>
+      <div className='price-card'>{price}</div>
     </div>
   );
 };
