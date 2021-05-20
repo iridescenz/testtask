@@ -23,10 +23,8 @@ html {
   --border-color: #f3f4f5;
   --font-color: #969fbf;
 }
-.li-container {
-  display: grid;
-}
-.card {
+
+div.card {
   border: 1px solid var(--border-color);
   width: 172px;
   height: 162px;
@@ -121,13 +119,36 @@ html {
   align-items: center;
 }
 
-.plan-name > div {
-  margin-left: 4rem;
-}
 .plan {
   width: calc(95px + 16px + 136px);
 }
 
+.plan-name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.chosen-plan {
+  padding: 0px;
+  height: 15px;
+  margin-left: 16px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 501;
+  font-size: 12px;
+  line-height: 15px;
+  width: 140px;
+  letter-spacing: 0.02em;
+  color: #2c3143;
+}
+.plan-name > .price {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 115%;
+  width: 57px;
+}
 .subscribe-plan {
   width: calc(878px - 95px - 16px - 136px);
   border-right: 1px solid var(--border-color);
@@ -144,7 +165,6 @@ html {
 }
 
 .close-icon > svg {
-  position: absolute;
   width: 14px;
   height: 14px;
   margin-left: calc(841px - 30px - 229px);
@@ -152,13 +172,12 @@ html {
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 12fr);
+  display: flex;
   margin-bottom: 10px;
   margin-top: calc(107px - 60px - 18px - 21px);
   margin-left: 30px;
+  gap: 12px;
 }
-
 
 .card > a {
   width: 67px;
@@ -175,6 +194,13 @@ html {
 }
 .card > ul::after {
   margin: 0;
+}
+div.card:active {
+  border: 2px solid var(--blue);
+}
+
+.active {
+  color: var(--blue);
 }
 
 .bold-header {
@@ -202,8 +228,8 @@ html {
   text-align: left;
 }
 
-.price:before,
-.price-card:before {
+.price::before,
+.price-card::before {
   content: '$';
 }
 
@@ -221,9 +247,9 @@ form.slots-form {
   width: 79px;
   margin-top: 8px;
   margin-left: 30px;
-text-align: center;
-grid-template-columns: repeat(2, 1fr);
-margin-bottom: 42px;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 42px;
 }
 
 .slots-form > input {
@@ -231,8 +257,8 @@ margin-bottom: 42px;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
-  line-height: 125%;  
-  width:30px;
+  line-height: 125%;
+  width: 30px;
   height: 26px;
   margin: 6px 7px 6px 6px;
   border: none;
@@ -250,14 +276,14 @@ div.button-choose-slots {
 div.button-choose-slots > button {
   border: none;
   color: var(--light-grey);
-  background-color:white;
+  background-color: white;
   height: 20px;
   outline: none;
   font-size: 16px;
 }
 
- .error {
-  border: 1px solid #EC5A75!important;
+.error {
+  border: 1px solid #ec5a75 !important;
 }
 
 section > .bold-header {
@@ -265,16 +291,16 @@ section > .bold-header {
 }
 
 .text-error {
-width: 267px;
-height: 30px;
-margin-left: 10px;
-margin-top: 12px;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 125%;
-color: #EC5A75;
+  width: 267px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 125%;
+  color: #ec5a75;
 }
 
 .slots-area {
@@ -283,4 +309,12 @@ color: #EC5A75;
 
 .text-error {
   display: none;
+}
+
+.more {
+  width: 67px;
+  height: 14px;
+  margin-left: 12px;
+  margin-top: 133px;
+  margin-bottom: 15px;
 }

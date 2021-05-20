@@ -19,6 +19,7 @@ const Page1 = () => {
   const [step, setStep] = useState('1/3');
   const [plan, setPlan] = useState(null);
   const [price, setPrice] = useState(0);
+  const [active, setActive] = useState(false);
 
   const fetchData = (e) => {
     e.preventDefault();
@@ -61,8 +62,10 @@ const Page1 = () => {
                 onClick={() => setSlots('')}
               />
               <div className='button-choose-slots'>
-                <button onClick={increment()}>+</button>
-                <button onClick={decrement()}>-</button>
+                <button onClick={ e =>{ e.preventDefault();
+                  increment()}}>+</button>
+                <button onClick={ e =>{e.preventDefault();
+                decrement()}}>-</button>
               </div>
             </form>
             <div className='text-error'>
@@ -82,11 +85,11 @@ const Page1 = () => {
       <div className='plan'>
         <h5 className='bold-header'>Ваш запрос </h5>
         <div className='plan-name'>
-          {plan === null ? <div>План не выбран</div> : `План "${plan}"`}
+          {plan === null ? <div className='chosen-plan'>План не выбран</div> : <div className='chosen-plan'> План "{plan}"</div>}
           {() => setPrice(price)}
-          {price === 0 ? <div> 0 </div> : <div className='price'>{price}</div>}
+          {price === 0 ? <div className='price'> 0 </div> : <div className='price'> {price}</div>}
         </div>
-        <div>Итого: {price * slots}</div>
+       <div className='price'>    Итого:  {price * slots}</div>
         <div className='balance'>
           <div>
             Ваш баланс: <span className='price'>{` ${user.balance}`}</span>

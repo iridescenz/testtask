@@ -18,15 +18,13 @@ const Card = ({ header, price, onClick }) => {
               <>
                 <li key={el.slots}>От {el.slots} слотов,</li>
                 <li key={el.countries}>{el.countries} стран ГЕО,</li>
-                <li className='price' key={el.price}>
-                  {el.price} {` за слот`}
-                </li>
+                <li className='price' key={el.price}>{el.price} {` за слот`}</li>
               </>
             );
           })}
       </ul>
       <div className='price-card'>{price}</div>
-      <a href=''>Подробнее</a>
+      <a href='' className='more'>Подробнее</a>
     </div>
   );
 };
