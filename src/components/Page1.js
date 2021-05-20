@@ -15,21 +15,16 @@ const Page1 = () => {
   const increment = () => dispatch({ type: 'INCREMENT' });
   const decrement = () => dispatch({ type: 'DECREMENT' });
 
-
   const [slots, setSlots] = useState('');
   const [step, setStep] = useState('1/3');
   const [plan, setPlan] = useState(null);
   const [price, setPrice] = useState(0);
 
-
   const fetchData = (e) => {
     e.preventDefault();
-    console.log('Fetching data')
-    axios
-    .get(`url`)
-    .then()
-    .catch();
-  }
+    console.log('Fetching data');
+    axios.get(`url`).then().catch();
+  };
 
   return (
     <div className='container'>
@@ -37,7 +32,7 @@ const Page1 = () => {
         <h2 className='bold-header'>План подписки</h2>
         <div className='card-container'>
           {content.map((el) => (
-            <Card 
+            <Card
               header={el.header}
               price={el.price}
               key={el.ind}
@@ -55,28 +50,26 @@ const Page1 = () => {
         </div>
         <section>
           <h2 className='bold-header'>Количество слотов</h2>
-          <form className='slots-form'>
-            <input
-              className='input'
-              type='text'
-              name='slots'
-              value={slots}
-              onChange={(e) => setSlots(e.target.value)}
-              onClick={() => setSlots('')}
-            />
-            <div className='button-choose-slots'>
-              <button
-                onClick={increment}
-              >
-                +
-              </button>
-              <button
-                onClick={decrement}
-              >
-                -
-              </button>
+          <div className='slots-area'>
+            <form className='slots-form'>
+              <input
+                className='input'
+                type='text'
+                name='slots'
+                value={slots}
+                onChange={(e) => setSlots(e.target.value)}
+                onClick={() => setSlots('')}
+              />
+              <div className='button-choose-slots'>
+                <button onClick={increment()}>+</button>
+                <button onClick={decrement()}>-</button>
+              </div>
+            </form>
+            <div className='text-error'>
+              {' '}
+              Для оформления выбранного плана необходимо более 15 слотов
             </div>
-          </form>
+          </div>
         </section>
         <div className='footer'>
           <button className='next'>Продолжить</button>
@@ -91,19 +84,17 @@ const Page1 = () => {
         <div className='plan-name'>
           {plan === null ? <div>План не выбран</div> : `План "${plan}"`}
           {() => setPrice(price)}
-          {price === 0 ? (
-            <div> 0 </div>
-          ) : (
-            <div className='price'>
-              {price}
-            </div>
-          )}
+          {price === 0 ? <div> 0 </div> : <div className='price'>{price}</div>}
         </div>
         <div>Итого: {price * slots}</div>
         <div className='balance'>
-          <div>Ваш баланс: <span className='price'>{` ${user.balance}`}</span></div>
+          <div>
+            Ваш баланс: <span className='price'>{` ${user.balance}`}</span>
+          </div>
           <div className='footer'>
-            <button className='balance-check' onClick={fetchData}>Запросить</button>
+            <button className='balance-check' onClick={fetchData}>
+              Запросить
+            </button>
           </div>
         </div>
       </div>
