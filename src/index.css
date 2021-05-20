@@ -29,11 +29,18 @@ html {
 } 
 .card  {
   border: 1px solid var(--border-color);
+  width: 172px;
+height: 162px;
+background: #FFFFFF;
+border-radius: 4px;
+cursor: pointer;
 }
+
 .page-container {
   margin: 0 auto;
   width: 878px;
   height: 477px;
+  border: 1px solid var(--border-color);
 }
 
 .header {
@@ -87,10 +94,6 @@ text-align: left;
   display: flex;
   flex-direction: row;
 }
-.card {
-  min-width: 172px;
-  cursor: pointer;
-}
 
 .card-clicked{
   color: blue;
@@ -100,8 +103,10 @@ text-align: left;
   display: grid;
   grid-template-columns: repeat( 3, 1fr );
   border-bottom: 1px solid var( --border-color);
-  gap: 2rem;
+  gap: 12px;
   margin-bottom: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .bold-header {
@@ -112,6 +117,10 @@ text-align: left;
   line-height: 18px;
   letter-spacing: 0.03em;
   text-align: left;
+  margin-left: 30px;
+  margin-top: 21px;
+  width: 125px;
+  height: 18px;
 }
 
 .price-card{

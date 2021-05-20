@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Card from './Card';
 import { content, user } from './data';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 const Page1 = () => {
   const plans = [
@@ -9,6 +10,11 @@ const Page1 = () => {
     { name: 'Стандарт+', slots: 15, countries: 74, price: 99 },
     { name: 'Премиум', slots: 10, countries: 90, price: 119 },
   ];
+
+  const dispatch = useDispatch();
+  const increment = () => dispatch({ type: 'INCREMENT' });
+  const decrement = () => dispatch({ type: 'DECREMENT' });
+
 
   const [slots, setSlots] = useState('');
   const [step, setStep] = useState('1/3');
@@ -28,7 +34,7 @@ const Page1 = () => {
   return (
     <div className='container'>
       <div className='subscribe-plan'>
-        <h5 className='bold-header'>План подписки</h5>
+        <div className='bold-header'>План подписки</div>
         <div className='card-container'>
           {content.map((el) => (
             <Card 
@@ -60,22 +66,16 @@ const Page1 = () => {
               placeholder={'выберите слоты'}
             />
             <div className='button-choose-slots'>
-              <div
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSlots(slots + 1);
-                }}
+              <button
+                onClick={increment}
               >
                 +
-              </div>
-              <div
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSlots(slots - 1);
-                }}
+              </button>
+              <button
+                onClick={decrement}
               >
                 -
-              </div>
+              </button>
             </div>
           </form>
         </section>
