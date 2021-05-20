@@ -26,12 +26,12 @@ html {
   display: grid;
 }
 .card {
-  border: 1px solid var(--border-color);
-  width: 172px;
-  height: 162px;
-  background: #ffffff;
-  border-radius: 4px;
-  cursor: pointer;
+border: 1px solid var(--border-color);
+width: 172px;
+height: 162px;
+background: #FFFFFF;
+box-sizing: border-box;
+border-radius: 4px;
 }
 
 .card > h3 {
@@ -48,22 +48,26 @@ html {
   letter-spacing: -0.01em;
 }
 
+.card > ul, .card > ul > li {
+  list-style-type: none;
+}
+
 .card > ul {
   position: absolute;
   width: 183px;
   height: 45px;
   margin-top: 40px;
-  padding-left: 0;
+  padding: 0;
+  margin-left: 0;
 }
-
 .card > ul > li {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 125%;
-  list-style-type: none;
   margin-left: 12px;
+
 }
 .card > .price-card {
   width: 48px;
@@ -77,10 +81,15 @@ html {
   line-height: 125%;
 }
 .page-container {
-  margin: 0 auto;
+  margin-top: 0;
+  margin-left: 0;
   width: 878px;
   height: 477px;
   border: 1px solid var(--border-color);
+  position: absolute;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(56, 69, 117, 0.25);
+  border-radius: 6px;
 }
 
 .header {
@@ -120,11 +129,11 @@ html {
   margin-left: 4rem;
 }
 .plan {
-  width: 40vw;
+  width: calc(95px + 16px + 136px);
 }
 
 .subscribe-plan {
-  width: 60vw;
+  width: calc(878px - 95px - 16px - 136px);
   border-right: 1px solid var(--border-color);
   font-size: 15px;
 }
@@ -141,11 +150,26 @@ html {
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid var(--border-color);
-  gap: 12px;
   margin-bottom: 10px;
   margin-left: 30px;
   margin-top: calc(107px - 60px - 18px - 21px);
+}
+
+.card > a {
+width: 67px;
+height: 14px;
+margin-left: 12px;
+margin-top: 133px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 11px;
+line-height: 14px;
+text-decoration-line: underline;
+color: var(--blue)
+}
+.card > ul::after{
+  margin: 0;
 }
 
 .bold-header {
@@ -158,8 +182,8 @@ html {
   text-align: left;
   margin-left: 30px;
   margin-top: 21px;
-  width: 125px;
   height: 18px;
+  padding: 0;
 }
 
 .price-card {
@@ -176,3 +200,4 @@ html {
 .price-card:before {
   content: '$';
 }
+

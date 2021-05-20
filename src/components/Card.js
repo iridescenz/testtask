@@ -26,6 +26,7 @@ const Card = ({ header, price, onClick }) => {
           })}
       </ul>
       <div className='price-card'>{price}</div>
+      <a href=''>Подробнее</a>
     </div>
   );
 };

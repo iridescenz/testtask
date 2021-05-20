@@ -34,7 +34,7 @@ const Page1 = () => {
   return (
     <div className='container'>
       <div className='subscribe-plan'>
-        <div className='bold-header'>План подписки</div>
+        <h2 className='bold-header'>План подписки</h2>
         <div className='card-container'>
           {content.map((el) => (
             <Card 
@@ -54,7 +54,7 @@ const Page1 = () => {
           ))}
         </div>
         <section>
-          <h5 className='bold-header'>Количество слотов</h5>
+          <h2 className='bold-header'>Количество слотов</h2>
           <form className='slots-form'>
             <input
               className='input'
@@ -63,7 +63,6 @@ const Page1 = () => {
               value={slots}
               onChange={(e) => setSlots(e.target.value)}
               onClick={() => setSlots('')}
-              placeholder={'выберите слоты'}
             />
             <div className='button-choose-slots'>
               <button
