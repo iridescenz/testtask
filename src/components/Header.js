@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 const Header = () => {
   return (
     <div className='header'>
-      <h5 className='page-title'>Оформление подписки</h5>
+      <h1 className='page-title'>Оформление подписки</h1>
       <div className='close-icon'> 
         <AiOutlineClose />
       </div>

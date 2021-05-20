@@ -21,6 +21,7 @@ html {
   --grey: #6773a0;
   --blue: #205eff;
   --border-color: #f3f4f5;
+  --font-color: #969FBF;
 }
 .li-container {
   display: grid;
@@ -34,7 +35,7 @@ box-sizing: border-box;
 border-radius: 4px;
 }
 
-.card > h3 {
+.card > h1 {
   position: absolute;
   width: 82px;
   height: 17px;
@@ -46,6 +47,7 @@ border-radius: 4px;
   font-size: 15px;
   line-height: 115%;
   letter-spacing: -0.01em;
+  color: var(--hcolor)
 }
 
 .card > ul, .card > ul > li {
@@ -93,30 +95,25 @@ border-radius: 4px;
 }
 
 .header {
-  height: 59px;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
-  color: var(--hcolor);
 }
 
 .page-title {
-  margin-left: 2rem;
   font-family: Montserrat;
-  font-size: 18px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 23px;
+  font-weight: bold;
+  font-size: 18px;
   letter-spacing: -0.01em;
-  text-align: left;
+  line-height: 125%;
+  color: var(--hcolor);
+  width: 229px;
+height: 23px;
+margin-left: 30px;
+margin-top: 19px;
 }
 
-.close-icon {
-  margin-left: auto;
-  margin-right: 24px;
-}
 
 .plan-name {
   height: 4rem;
@@ -145,6 +142,14 @@ border-radius: 4px;
 
 .card-clicked {
   color: blue;
+}
+
+.close-icon > svg{
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-left: calc(841px - 30px - 229px);
+  color: #8C8C8C;
 }
 
 .card-container {
@@ -184,6 +189,7 @@ color: var(--blue)
   margin-top: 21px;
   height: 18px;
   padding: 0;
+  color: var(--grey);
 }
 
 .price-card {
@@ -201,3 +207,31 @@ color: var(--blue)
   content: '$';
 }
 
+.card:not(last-child) {
+  color: var(--font-color);
+}
+
+form.slots-form {
+display: grid;
+background: #FFFFFF;
+border: 1px solid var(--border-color);
+box-sizing: border-box;
+border-radius: 4px;
+height: 42px;
+width: 79px;
+grid-template-areas: 'input' 'button',
+}
+
+.slots-form > input {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 125%;
+  width: 13px;
+}
+
+ div.button-choose-slots {
+  display: flex;
+  flex-direction: column-reverse;
+}

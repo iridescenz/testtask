@@ -9,7 +9,7 @@ const Card = ({ header, price, onClick }) => {
 
   return (
     <div className='card' onClick={onClick}>
-      <h3>{header}</h3>
+      <h1>{header}</h1>
       <ul className='li-container'>
         {plans
           .filter((elem) => elem.name === header)
