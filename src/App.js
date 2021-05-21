@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={Page1} />
-        <Route path='subscription-period' exact component={SecondPage} />
-        <Route path='purchase' exact component={ThirdPage} />
+        <Route path='/subscription-period' exact component={SecondPage} />
+        <Route path='/purchase' exact component={ThirdPage} />
       </Switch>
     </BrowserRouter>
   );

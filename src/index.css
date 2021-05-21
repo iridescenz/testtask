@@ -121,7 +121,7 @@ div.card {
 }
 
 .plan {
-  width: calc(878px - 630);
+  width: calc(878px - 630px);
 }
 
 .plan-name {
@@ -250,7 +250,7 @@ form.slots-form {
   margin-left: 30px;
   text-align: center;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 42px;
+  margin-bottom: 49px;
 }
 
 .slots-form > input {
@@ -318,4 +318,58 @@ section > .bold-header {
   margin-left: 12px;
   margin-top: 133px;
   margin-bottom: 15px;
+}
+footer {
+  height: 70px;
+  display: flex;
+}
+section.next {
+  display: flex;
+  flex-direction: row;
+  width: 630px;
+}
+section.balance {
+  color: red;
+}
+
+section.total-balance {
+  display: grid;
+  width: calc(878px - 630px);
+}
+
+.balance {
+  display: flex;
+}
+
+footer input[type='button'] {
+  background-color: var(--blue);
+  height: 42px;
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 39px;
+  text-align: center;
+  color: #f4f7ff;
+  padding:0  25px;
+}
+
+.comeback {
+width: 150px;
+height: 36px;
+left: calc(50% - 119px/2 - 196.5px);
+font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 36px;
+text-align: center;
+color: var(--blue);
+}
+
+.comeback > svg {
+  font-size: 10px;
+  font-weight: bold;
 }

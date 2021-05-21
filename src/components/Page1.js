@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card from './Card';
 import { content, user } from './data';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
@@ -23,11 +22,6 @@ const Page1 = () => {
   const [price, setPrice] = useState(0);
   const [active, setActive] = useState(false);
 
-  const fetchData = (e) => {
-    e.preventDefault();
-    console.log('Fetching data');
-    axios.get(`url`).then().catch();
-  };
 
   return (
     <div className='page-container'>
@@ -73,18 +67,11 @@ const Page1 = () => {
               </div>
             </form>
             <div className='text-error'>
-              {' '}
               Для оформления выбранного плана необходимо более 15 слотов
             </div>
           </div>
         </section>
-        <div className='footer'>
-          <button className='next'>Продолжить</button>
-          <div className='progress'>
-            <div>Шаг: {step}</div>
-            <p>План подписки</p>
-          </div>
-        </div>
+
       </div>
       <div className='plan'>
         <h5 className='bold-header'>Ваш запрос </h5>
@@ -92,17 +79,6 @@ const Page1 = () => {
           {plan === null ? <div className='chosen-plan'>План не выбран</div> : <div className='chosen-plan'> План "{plan}"</div>}
           {() => setPrice(price)}
           {price === 0 ? <div className='price'> 0 </div> : <div className='price'> {price}</div>}
-        </div>
-       <div className='price'>    Итого:  {price * slots}</div>
-        <div className='balance'>
-          <div>
-            Ваш баланс: <span className='price'>{` ${user.balance}`}</span>
-          </div>
-          <div className='footer'>
-            <button className='balance-check' onClick={fetchData}>
-              Запросить
-            </button>
-          </div>
         </div>
       </div>
     </div>
