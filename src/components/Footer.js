@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import {IoIosArrowBack} from 'react-icons/io'
+import {user} from './data'
 
 const Footer = () => {
   const fetchData = (e) => {
@@ -19,11 +20,9 @@ const Footer = () => {
             </div>
         </section>
         <section className='total-balance'>
-       <div className='total'>Итого:<span className='price'> {'price * slots'}</span></div> 
-        <div className='balance'>
-          <div className='check'>
-            Ваш баланс: <span className='price'>{` ${'user.balance'}`}</span>
-          </div>
+       <div className='total'><span>Итого:</span> <span className='price'> {'2470'}</span></div> 
+        <div className='checkout'>
+        <div className='balance'><h2>Ваш баланс:</h2><div className='price'>{` ${user.balance}`}</div></div>
             <input type='button' value='Запросить' className='balance-check' onClick={'fetchData'} />
           </div>
           </section>
