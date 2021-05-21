@@ -511,3 +511,31 @@ color: #34324F;
   border-right: 1px solid var(--border-color);
   font-size: 15px;
 }
+
+.period-form-input {
+  margin-top: 7px;
+  margin-left: 30px;
+  width: 258px;
+  height: 42px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background: #FFFFFF;
+border: 2px solid #205EFF;
+box-sizing: border-box;
+border-radius: 4px;
+position: absolute;
+}
+
+.caret-down {
+  position: relative;
+  margin-left: 255px;
+  margin-top: 19px;
+
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
