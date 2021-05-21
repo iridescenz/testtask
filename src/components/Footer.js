@@ -4,7 +4,7 @@ import {IoIosArrowBack} from 'react-icons/io'
 import {user} from './data'
 import { Link } from 'react-router-dom';
 
-const Footer = ({link}) => {
+const Footer = ({link, back}) => {
   const fetchData = (e) => {
     e.preventDefault();
     console.log('Fetching data');
@@ -14,7 +14,8 @@ const Footer = ({link}) => {
 <footer>
 <section className='next'>
 <Link to={link} style={{ color: 'inherit', textDecoration: 'inherit'}}><input className='next' type='button' value='Продолжить'/></Link>
-          <div className='comeback'> <IoIosArrowBack /> Вернуться назад</div>
+{back ? 
+<Link to={back} style={{ color: 'inherit', textDecoration: 'inherit'}}><div className='comeback'> <IoIosArrowBack /> Вернуться назад</div></Link> : <div className='comeback' style={{width: '119px'}}></div>}
           <div className='step-container'>
             <div classname='step'><span className='step-value'>Шаг 1/3</span><span className='plan-value'>План подписки</span> </div>
             <div className='progress'><span></span></div>

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
+import Plan from './Plan'
 
 const Page1 = () => {
   const plans = [
@@ -72,16 +73,8 @@ const Page1 = () => {
             </div>
           </div>
         </section>
-
       </div>
-      <div className='plan'>
-        <h5 className='bold-header'>Ваш запрос </h5>
-        <div className='plan-name'>
-          {plan === null ? <div className='chosen-plan'>План не выбран</div> : <div className='chosen-plan'> План "{plan}"</div>}
-          {() => setPrice(price)}
-          {price === 0 ? <div className='price'> 0 </div> : <div className='price'> {price}</div>}
-        </div>
-      </div>
+      <Plan />
     </div>
     <Footer link='/subscription-period' />
     </div>

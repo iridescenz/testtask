@@ -9,7 +9,7 @@ const ThirdPage = () => {
     <div>
       no content
     </div>
-    <Footer />
+    <Footer back='/subscription-period'/>
     </div>
   )
 }

@@ -368,7 +368,7 @@ footer input[type='button'].balance-check{
   width: 120px;
   margin-top: 0;
   padding:0  22px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .comeback {
@@ -504,4 +504,10 @@ font-size: 14px;
 line-height: 17px;
 text-align: right;
 color: #34324F;
+}
+
+.period {
+  width: 630px;
+  border-right: 1px solid var(--border-color);
+  font-size: 15px;
 }
