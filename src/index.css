@@ -355,16 +355,19 @@ footer input[type='button'] {
   line-height: 39px;
   text-align: center;
   color: #f4f7ff;
-  padding:0  25px;
+  outline: none;
+  cursor: pointer;
 }
 
-footer input[type='button']:first-child {
+footer input[type='button'].next {
   margin-left: 30px;
+  padding:0  25px;
 }
-footer input[type='button']:last-child {
-  margin-right: 30px;
+footer input[type='button'].balance-check{
+  margin-right: 22px;
   width: 120px;
   margin-top: 0;
+  padding:0  22px;
   margin-bottom: 35px;
 }
 

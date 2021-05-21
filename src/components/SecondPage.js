@@ -9,7 +9,7 @@ const SecondPage = () => {
     <div>
       no content
     </div>
-    <Footer />
+    <Footer link='/purchase' />
     </div>
   )
 }

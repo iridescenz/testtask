@@ -2,8 +2,9 @@ import React from 'react'
 import axios from 'axios';
 import {IoIosArrowBack} from 'react-icons/io'
 import {user} from './data'
+import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = ({link}) => {
   const fetchData = (e) => {
     e.preventDefault();
     console.log('Fetching data');
@@ -12,7 +13,7 @@ const Footer = () => {
   return (
 <footer>
 <section className='next'>
-          <input className='next' type='button' value='Продолжить'/>
+<Link to={link} style={{ color: 'inherit', textDecoration: 'inherit'}}><input className='next' type='button' value='Продолжить'/></Link>
           <div className='comeback'> <IoIosArrowBack /> Вернуться назад</div>
           <div className='step-container'>
             <div classname='step'><span className='step-value'>Шаг 1/3</span><span className='plan-value'>План подписки</span> </div>

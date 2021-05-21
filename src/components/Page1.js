@@ -4,6 +4,7 @@ import { content, user } from './data';
 import { useDispatch } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
 const Page1 = () => {
   const plans = [
@@ -82,7 +83,7 @@ const Page1 = () => {
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer link='/subscription-period' />
     </div>
   );
 };
