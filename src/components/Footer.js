@@ -13,7 +13,9 @@ const Footer = () => {
 <section className='next'>
           <input className='next' type='button' value='Продолжить'/>
           <div className='comeback'> <IoIosArrowBack /> Вернуться назад</div>
-            <div classname='step'>Шаг: {'step 1 of 3'} / {'stepr-name'}
+          <div className='step-container'>
+            <div classname='step'><span className='step-value'>Шаг 1/3</span><span className='plan-value'>План подписки</span> </div>
+            <div className='progress'><span></span></div>
             </div>
         </section>
         <section className='total-balance'>
