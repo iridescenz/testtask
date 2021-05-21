@@ -113,14 +113,15 @@ div.card {
 }
 
 .plan-name {
-  height: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: 30px;
+  margin-top: 13px;
 }
 
 .plan {
-  width: calc(95px + 16px + 136px);
+  width: calc(878px - 630);
 }
 
 .plan-name {
@@ -131,7 +132,6 @@ div.card {
 .chosen-plan {
   padding: 0px;
   height: 15px;
-  margin-left: 16px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 501;
@@ -150,7 +150,7 @@ div.card {
   width: 57px;
 }
 .subscribe-plan {
-  width: calc(878px - 95px - 16px - 136px);
+  width: 630px;
   border-right: 1px solid var(--border-color);
   font-size: 15px;
 }
@@ -161,7 +161,7 @@ div.card {
 }
 
 .card-clicked {
-  color: blue;
+  color: var(--blue);
 }
 
 .close-icon > svg {
@@ -215,6 +215,7 @@ div.card:active {
   margin-top: 21px;
   height: 18px;
   padding: 0;
+  margin-bottom: 0;
   color: var(--grey);
 }
 

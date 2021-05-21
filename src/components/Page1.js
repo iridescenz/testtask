@@ -3,6 +3,8 @@ import Card from './Card';
 import { content, user } from './data';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import Header from './Header'
+import Footer from './Footer'
 
 const Page1 = () => {
   const plans = [
@@ -28,6 +30,8 @@ const Page1 = () => {
   };
 
   return (
+    <div className='page-container'>
+    <Header />
     <div className='container'>
       <div className='subscribe-plan'>
         <h2 className='bold-header'>План подписки</h2>
@@ -101,6 +105,8 @@ const Page1 = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };
