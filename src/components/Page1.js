@@ -74,9 +74,9 @@ const Page1 = () => {
           </div>
         </section>
       </div>
-      <Plan />
+      <Plan pageHeader='Ваш запрос'/>
     </div>
-    <Footer link='/subscription-period' />
+    <Footer link='/subscription-period' step='1/3' stepName='План подписки'/>
     </div>
   );
 };
