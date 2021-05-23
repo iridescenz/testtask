@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className='header'>
       <h1 className='page-title'>Оформление подписки</h1>
-      <div className='close-icon'> 
+      <div className='close-icon'>
         <AiOutlineClose />
       </div>
     </div>

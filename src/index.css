@@ -117,17 +117,21 @@ div.card {
 
 .plan {
   width: 247px;
-  height: 200px;
   display: flex;
   flex-direction: column;
+  gap: 13px;
 }
 
-.plan-name {
+.plan-name,
+.term-name,
+.discount-name {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-.chosen-plan {
+.chosen-plan,
+.chosen-term,
+.discount {
   padding: 0px;
   height: 15px;
   font-weight: 501;
@@ -137,7 +141,12 @@ div.card {
   letter-spacing: 0.02em;
   color: #2c3143;
 }
-.plan-name > .price {
+.chosen-term,
+.discount {
+  margin-left: 30px;
+}
+.plan-name > .price,
+.term-price {
   font-weight: 600;
   font-size: 14px;
   line-height: 115%;
@@ -322,7 +331,8 @@ section.total-balance {
   border-left: 1px solid var(--border-color);
 }
 
-footer input[type='button'], .see-request{
+footer input[type='button'],
+.see-request {
   background-color: var(--blue);
   font-family: Montserrat;
   height: 39px;
@@ -409,7 +419,7 @@ footer input[type='button'].balance-check {
   width: 33%;
   background-color: var(--blue);
   position: relative;
-  border-radius: 2px 0px 0px 2px;
+  border-radius: 2px 2px 2px 2px;
 }
 
 .total {
@@ -458,7 +468,8 @@ footer input[type='button'].balance-check {
   text-align: right;
   color: #9b99ae;
 }
-div.price {
+div.price,
+.discount-val {
   width: 57px;
   height: 18px;
   font-weight: 600;
@@ -468,6 +479,15 @@ div.price {
   color: #34324f;
 }
 
+div.term-price {
+  width: 57px;
+  height: 18px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  color: #34324f;
+}
 .period,
 .top-up-balance {
   width: 630px;
@@ -524,8 +544,6 @@ input::-webkit-calendar-picker-indicator {
 }
 .form-input[type='text'] {
   border: 1px solid #f1f2f5;
-}
-.success {
 }
 
 div.plan {
@@ -631,12 +649,24 @@ input[type='radio']:checked {
 }
 
 .description {
-width: 140px;
-height: 14px;
-margin-top: 2px;
-font-weight: 500;
-font-size: 11px;
-line-height: 125%;
-color: #9B99AE;
-margin-left: 30px;
+  width: 140px;
+  height: 14px;
+  margin-top: -18px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 125%;
+  color: #9b99ae;
+  margin-left: 30px;
+}
+
+.term-price::before {
+  content: 'X ';
+}
+
+.discount-val:before {
+  content: '- ';
+}
+
+.discount-val {
+  color: var(--blue);
 }

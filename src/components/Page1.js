@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from './Card';
 import { content } from './data';
-import { useDispatch } from 'react-redux';
 import Header from './Header';
 import Footer from './Footer';
 import Plan from './Plan';
 import store from '../store';
 import { connect, useSelector } from 'react-redux';
-import { Form, Field } from 'react-final-form';
 
 const Page1 = () => {
-  const plans = [
-    { name: 'Стандарт', slots: 20, countries: 59, price: 79 },
-    { name: 'Стандарт+', slots: 15, countries: 74, price: 99 },
-    { name: 'Премиум', slots: 10, countries: 90, price: 119 },
-  ];
-  const dispatch = useDispatch();
   const increment = () => store.dispatch({ type: 'INCREMENT' });
   const decrement = () => store.dispatch({ type: 'DECREMENT' });
   const slots = useSelector((state) => state.slots);
 
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
   return (
     <div className='page-container'>
@@ -48,7 +40,6 @@ const Page1 = () => {
                       type: 'SET PRICE',
                       payload: el.price,
                     })
-                    console.log(store.getState())
                 }}
               />
             ))}
@@ -95,7 +86,6 @@ const mapStateToProps = (state) => {
   return {
     slots: state.slots,
     plan: state.plan,
-    total: state.total,
   };
 };
 

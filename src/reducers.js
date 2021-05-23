@@ -26,6 +26,17 @@ function reducers(state, action) {
         ...state,
         price: action.payload,
       };
+    case 'SET PERIOD':
+      return {
+        ...state,
+        period: action.payload,
+      };
+    case 'SET DISCOUNT': {
+      return {
+        ...state,
+        discount: action.payload,
+      };
+    }
     default:
       return state;
   }
