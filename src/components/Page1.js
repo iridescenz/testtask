@@ -18,11 +18,12 @@ const Page1 = () => {
   const dispatch = useDispatch();
   const increment = () => store.dispatch({ type: 'INCREMENT' });
   const decrement = () => store.dispatch({ type: 'DECREMENT' });
+  const setSlots = () => store.dispatch({ type: 'SET SLOTS' });
 
 
   const [active, setActive] = useState(false);
 
-  const [sl, setSl] = useState(store.getState().slots);
+
   return (
     <div className='page-container'>
     <Header />
@@ -51,6 +52,7 @@ const Page1 = () => {
                 type='text'
                 name='slots'
                 value={store.getState().slots}
+                onChange={() => setSlots()}
                 
               />
               <div className='button-choose-slots'>
@@ -76,8 +78,7 @@ const mapStateToProps = state => {
     slots: state.slots,
     plan: state.plan, 
     total: state.total
-  };
-};
-
+}
+  }
 
 export default connect(mapStateToProps)(Page1);

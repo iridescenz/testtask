@@ -8,6 +8,11 @@ function reducers (state, action) {
       return {
         ...state, slots: state.slots - 1
       };
+    case 'SET SLOTS': {
+      return {
+        ...state, slots: action.payload,
+      }
+    }
     default:
       return state;
   }
