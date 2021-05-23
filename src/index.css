@@ -118,6 +118,8 @@ div.card {
 .plan {
   width: 247px;
   height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .plan-name {
@@ -626,4 +628,15 @@ input[type='radio']:checked {
   font-weight: 700;
   font-size: 18px;
   line-height: 125%;
+}
+
+.description {
+width: 140px;
+height: 14px;
+margin-top: 2px;
+font-weight: 500;
+font-size: 11px;
+line-height: 125%;
+color: #9B99AE;
+margin-left: 30px;
 }

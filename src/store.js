@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 import reducers from './reducers'
 
-const initialState = {slots : 0, total : 0, discount: 0, period: null, plan: ''}
+const initialState = {slots: '', total : null, discount: 0, period: null, plan: null, price: null}
 
 const store = createStore(reducers, initialState);
 

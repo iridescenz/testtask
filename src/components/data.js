@@ -1,19 +1,22 @@
 const content = [
   {
     ind: 22201,
-    header: 'Стандарт',
+    plan: 'Стандарт',
     price: 99,
+    slots: 20
   },
   {
     ind: 2222,
-    header: 'Стандарт+',
+    plan: 'Стандарт+',
     price: 165,
+    slots: 15
   },
 
   {
     ind: 113,
-    header: 'Премиум',
+    plan: 'Премиум',
     price: 379,
+    slots: 10
   },
 ];
 
