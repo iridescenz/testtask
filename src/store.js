@@ -1,27 +1,9 @@
 import { createStore } from 'redux'
+import reducers from './reducers'
 
-const initialState = {count : 0}
+const initialState = {slots : 0, total : 0, discount: 0, period: null, plan: ''}
 
-function slots (state = initialState, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1
-      };
-    case 'DECREMENT':
-      return {
-        count: state.count - 1
-      };
-    case 'SET SLOTS':
-      return {
-        count: state.count = this.target.value
-      }
-    default:
-      return state;
-  }
-}
- 
-const store = createStore(slots);
+const store = createStore(reducers, initialState);
 
 
 export default store

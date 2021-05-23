@@ -320,7 +320,7 @@ section.total-balance {
   border-left: 1px solid var(--border-color);
 }
 
-footer input[type='button'] {
+footer input[type='button'], .see-request{
   background-color: var(--blue);
   font-family: Montserrat;
   height: 39px;
@@ -596,8 +596,9 @@ input[type='radio']:checked {
   width: 247px;
   border: 1px dashed var(--light-grey);
   margin: 0 auto;
-  padding-top: 100px;
-  margin-top: 40px;
+  padding-top: 30px;
+  margin-top: 50px;
+  padding-bottom: 20px;
 }
 .success > p {
   font-family: Montserrat;

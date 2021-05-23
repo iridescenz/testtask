@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import { content, user } from './data';
+import { content } from './data';
 import { useDispatch } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
-import { Link } from 'react-router-dom';
 import Plan from './Plan'
+import store from '../store'
+import { connect } from "react-redux";
+import { Form, Field } from 'react-final-form'
 
 const Page1 = () => {
   const plans = [
@@ -13,18 +15,14 @@ const Page1 = () => {
     { name: 'Стандарт+', slots: 15, countries: 74, price: 99 },
     { name: 'Премиум', slots: 10, countries: 90, price: 119 },
   ];
-
   const dispatch = useDispatch();
-  const increment = () => dispatch({ type: 'INCREMENT' });
-  const decrement = () => dispatch({ type: 'DECREMENT' });
+  const increment = () => store.dispatch({ type: 'INCREMENT' });
+  const decrement = () => store.dispatch({ type: 'DECREMENT' });
 
-  const [slots, setSlots] = useState('');
-  const [step, setStep] = useState('1/3');
-  const [plan, setPlan] = useState(null);
-  const [price, setPrice] = useState(0);
+
   const [active, setActive] = useState(false);
 
-
+  const [sl, setSl] = useState(store.getState().slots);
   return (
     <div className='page-container'>
     <Header />
@@ -39,12 +37,7 @@ const Page1 = () => {
               key={el.ind}
               onClick={(e) => {
                 e.preventDefault();
-                setPlan(el.header);
-                const element = plans.filter((el) => el.name == plan);
-                element.length > 0 && setPrice(element[0].price);
-                element.length > 0 && setSlots(element[0].slots);
-                // let result =  new Promise ((resolve, reject) => resolve (plans.filter(el => el.name === plan)));
-                // const elem = await result.then();
+
               }}
             />
           ))}
@@ -57,15 +50,12 @@ const Page1 = () => {
                 className='input'
                 type='text'
                 name='slots'
-                value={slots}
-                onChange={(e) => setSlots(e.target.value)}
-                onClick={() => setSlots('')}
+                value={store.getState().slots}
+                
               />
               <div className='button-choose-slots'>
-                <button onClick={ e =>{ e.preventDefault();
-                  increment()}}>+</button>
-                <button onClick={ e =>{e.preventDefault();
-                decrement()}}>-</button>
+                <button type='button' onClick={() => increment()}>+</button>
+                 <button type='button' onClick={() => decrement()}>-</button>
               </div>
             </form>
             <div className='text-error'>
@@ -81,4 +71,13 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+const mapStateToProps = state => {
+  return {
+    slots: state.slots,
+    plan: state.plan, 
+    total: state.total
+  };
+};
+
+
+export default connect(mapStateToProps)(Page1);

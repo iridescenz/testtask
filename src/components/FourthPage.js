@@ -9,10 +9,10 @@ const FourthPage = () => {
       <Header />
       <div className='success'>
       <h1>Готово!</h1>
-      <p>Подписка на аккаунты успешно оформлена
+      <p>Подписка на аккаунты успешно оформлена <br />
 Начните запрашивать аккаунты из раздела «Подписка»</p>
         <Plan />
-        <Link to={link} style={{ color: 'inherit', textDecoration: 'inherit'}}><input className='next' type='button' value='Продолжить'/></Link>
+        <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit'}}><input className='see-request' type='button' value='Перейти к запросу'/></Link>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const Plan = ({ pageHeader }) => {
-  const [price, setPrice] = useState('');
-  const [plan, setPlan] = useState('');
+  const [plan, setPlan] = useState('')
+  const [price, setPrice] = useState('')
   return (
     <div className='plan'>
       <h5 className='bold-header'>{pageHeader}</h5>
@@ -10,13 +10,13 @@ const Plan = ({ pageHeader }) => {
         {plan === null ? (
           <div className='chosen-plan'>План не выбран</div>
         ) : (
-          <div className='chosen-plan'> План "{plan}"</div>
+          <div className='chosen-plan'> План "{'plan'}"</div>
         )}
         {() => setPrice('price')}
         {price === 0 ? (
           <div className='price'> 0 </div>
         ) : (
-          <div className='price'> {price}</div>
+          <div className='price'> {'price'}</div>
         )}
       </div>
     </div>
