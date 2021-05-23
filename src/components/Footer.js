@@ -47,7 +47,7 @@ const Footer = ({ link, back, step, progress, stepName, success }) => {
             <span className='price'>
               {slots * price * +period.match(/[0-9]/gi)}
             </span>
-          )}{' '}
+          )}
         </div>
         <div className='checkout'>
           <div className='balance'>

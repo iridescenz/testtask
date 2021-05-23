@@ -25,7 +25,7 @@ const SecondPage = () => {
                 });
                 store.dispatch({
                   type: 'SET DISCOUNT',
-                  payload: (e.target.value.match(/[0-9]/gi)> 1 ? `${+e.target.value.match(/[0-9]/gi) * 10 - 10}%` : '0')
+                  payload: (e.target.value.match(/[0-9]/gi)> 1 ? `${+e.target.value.match(/[0-9]/gi) * 10 - 10}%` : 0)
                 });
               }}
             />

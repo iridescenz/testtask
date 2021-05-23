@@ -31,7 +31,7 @@ const Plan = ({ pageHeader }) => {
       ) : (
         ''
       )}
-      {discount !== null &&  discount > 0 ? (
+      {discount !== 0  ? (
         <div className='plan'>
         <div className='discount-name'>
           <div className='discount'>Скидка</div>
