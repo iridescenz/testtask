@@ -18,6 +18,32 @@ const ThirdPage = () => {
           <span className='dollar-sign' > <BiDollar /></span>
 </div>
     <div className='purchase-form'>Способ пополнения</div>
+    <div className='purchase-types'>
+    <div className='first'>
+    <label>
+  <input type="radio" name="radio" value='card' />
+  <img src='credit-card.png'/> Кредитной картой
+</label>
+    <label>
+  <input type="radio" name="radio" value='ya'/>
+  <img src='ya.png' /> Яндекс.деньги
+</label>
+   <label>
+  <input type="radio" name="radio" value='qiwi'/>
+  <img src='qiwi.png' /> QIWI кошелек
+</label>
+</div>
+    <div className='second'>
+   <label>
+  <input type="radio" name="radio"value='wm' />
+  <img src='wm.png' /> Webmoney
+</label>
+   <label>
+  <input type="radio" name="radio" value='b-coin' />
+  <img src='b-coin.png' /> Bitcoin
+</label>
+</div>
+    </div>
     </div>
     <Plan pageHeader='Ваш запрос'/>
     </div>
