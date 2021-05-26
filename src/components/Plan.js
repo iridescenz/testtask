@@ -11,34 +11,40 @@ const Plan = ({ pageHeader }) => {
   return (
     <div className='plan'>
       <h5 className='bold-header'>{pageHeader}</h5>
-      <div className='plan-name'>
+      <section>
+      <div className='item-block'>
         {plan !== null ? (
-          <div className='chosen-plan'> План "{plan}"</div>
+          <h3> План "{plan}"</h3>
         ) : (
-          <div className='chosen-plan'>План не выбран</div>
+          <h3>План не выбран</h3>
         )}
+       
         {price === null ? '' : <div className='price'> {price}</div>}
-      </div>
+        </div>
       {slots === '' ? '' : <div className='description'>{slots} слотов</div>}
+     </section>
+     <section>
       {period !== null ? (
-        <div className='plan'>
-        <div className='term-name'>
-          <div className='chosen-term'>Срок подписки</div>
-          <div className='term-price'>{period.match(/[0-9]/ig)}</div>
+        <>
+        <div className='item-block'>
+        <h3>Срок подписки</h3>
+          <div className='term price'>{period.match(/[0-9]/ig)}</div>
           </div>
           <div className='description'> {period}</div>
-        </div>
+          </>
       ) : (
-        ''
+       <div></div>
       )}
-      {discount !== 0  ? (
-        <div className='plan'>
-        <div className='discount-name'>
-          <div className='discount'>Скидка</div>
-          <div className='discount-val'>{discount}</div>
+      </section>
+      {discount !== 0  ? ( 
+        <section>
+        <div className='item-block'>
+        <h3>Скидка</h3>
+          <div className='discount'>{discount}</div>
           </div>
           <div className='description'>на подписку</div>
-        </div>
+          </section>
+          
       ) : (
         ''
       )}

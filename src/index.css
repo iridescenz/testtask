@@ -25,7 +25,7 @@ html {
   --font-color: #969fbf;
 }
 
-div.card {
+.card {
   border: 1px solid var(--border-color);
   width: 172px;
   height: 162px;
@@ -35,11 +35,11 @@ div.card {
 }
 
 .card > h1 {
-  position: absolute;
   width: 82px;
   height: 17px;
   margin-left: 12px;
   margin-top: 18px;
+  margin-bottom: 5px;
   font-weight: 600;
   font-size: 15px;
   line-height: 115%;
@@ -53,26 +53,21 @@ div.card {
 }
 
 .card > ul {
-  position: absolute;
-  width: 183px;
-  height: 45px;
-  margin-top: 40px;
+  width: 153px;
+  height: 60px;
   padding: 0;
-  margin-left: 0;
+  margin: 0;
 }
 .card > ul > li {
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 125%;
   margin-left: 12px;
 }
-.card > .price-card {
+.price-card {
   width: 48px;
   height: 26px;
   margin-left: 12px;
-  margin-top: 99px;
   font-weight: bold;
   font-size: 21px;
   line-height: 125%;
@@ -112,25 +107,39 @@ div.card {
   flex-direction: row;
   align-items: center;
   margin-left: 30px;
-  margin-top: 13px;
 }
 
-.plan {
-  width: 247px;
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+.plan > section {
+  margin-bottom: 13px;
+  margin-left: 30px;
+}
+.plan >.bold-header {
+  margin-bottom: 13px;
 }
 
-.plan-name,
-.term-name,
-.discount-name {
+.item-block{
+  width: calc(140 + 16 + 52);
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  height: 15px;
+  margin-bottom: 2px;
+  
 }
-.chosen-plan,
-.chosen-term,
+
+.item-block > h3 {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: #34324F;
+  margin: 0;
+}
+.item-block > .price, .item-block > .discount {
+  margin-left: auto;
+  margin-right: 22px;
+}
+
 .discount {
   padding: 0px;
   height: 15px;
@@ -141,17 +150,7 @@ div.card {
   letter-spacing: 0.02em;
   color: #2c3143;
 }
-.chosen-term,
-.discount {
-  margin-left: 30px;
-}
-.plan-name > .price,
-.term-price {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 115%;
-  width: 57px;
-}
+
 .subscribe-plan {
   width: 630px;
   border-right: 1px solid var(--border-color);
@@ -179,7 +178,7 @@ div.card {
   margin-bottom: 10px;
   margin-top: calc(107px - 60px - 18px - 21px);
   margin-left: 30px;
-  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .card > a {
@@ -214,7 +213,7 @@ div.card:active {
   margin-top: 21px;
   height: 18px;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom:0 ;
   color: var(--grey);
 }
 
@@ -282,10 +281,6 @@ div.button-choose-slots > button {
   border: 1px solid #ec5a75 !important;
 }
 
-section > .bold-header {
-  margin-bottom: 0;
-}
-
 .text-error {
   width: 267px;
   height: 30px;
@@ -305,20 +300,19 @@ section > .bold-header {
   display: none;
 }
 
-.more {
+a.more {
   width: 67px;
   height: 14px;
-  margin-left: 12px;
-  margin-top: 133px;
   margin-bottom: 15px;
+  margin-top: 8px;
 }
 footer {
-  height: calc(85px + 28px);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
-section.next {
+footer > .next {
   display: flex;
   flex-direction: row;
   width: 630px;
@@ -384,17 +378,7 @@ footer input[type='button'].balance-check {
   justify-content: center;
   align-items: flex-start;
 }
-.plan-value {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 125%;
-  text-align: right;
-  letter-spacing: -0.01em;
-  width: 99px;
-  height: 15px;
-  color: #2c3143;
-  margin-left: 50px;
-}
+
 .step-value {
   align-self: center;
   font-weight: 500;
@@ -468,10 +452,10 @@ footer input[type='button'].balance-check {
   text-align: right;
   color: #9b99ae;
 }
-div.price,
-.discount-val {
+.item-block > .price,
+.discount,
+.term-price, .balance> .price {
   width: 57px;
-  height: 18px;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -479,15 +463,6 @@ div.price,
   color: #34324f;
 }
 
-div.term-price {
-  width: 57px;
-  height: 18px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: right;
-  color: #34324f;
-}
 .period,
 .top-up-balance {
   width: 630px;
@@ -546,9 +521,6 @@ input::-webkit-calendar-picker-indicator {
   border: 1px solid #f1f2f5;
 }
 
-div.plan {
-  margin: 0 auto;
-}
 
 .purchase-types {
   display: flex;
@@ -557,7 +529,6 @@ div.plan {
   padding: 0px;
   margin-top: 12px;
   margin-left: 30px;
-  gap: 40px;
 }
 
 .first,
@@ -570,7 +541,13 @@ div.plan {
   height: 79px;
   left: 0px;
   top: 0px;
-  gap: 16px;
+}
+.second {
+  margin-left: 40px;
+}
+label:nth-of-type(2n) {
+margin-top: 15px;
+margin-bottom: 15px;
 }
 
 label {
@@ -602,6 +579,22 @@ input[type='radio'] {
   border-radius: 17px;
   outline: none;
   vertical-align: middle;
+}
+.plan {
+  width: 247px;
+  display: flex;
+  flex-direction: column;
+}
+.plan-value {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 125%;
+  text-align: right;
+  letter-spacing: -0.01em;
+  width: 99px;
+  height: 15px;
+  color: #2c3143;
+  margin-left: 50px;
 }
 
 input[type='radio']:checked {
@@ -651,22 +644,24 @@ input[type='radio']:checked {
 .description {
   width: 140px;
   height: 14px;
-  margin-top: -18px;
   font-weight: 500;
   font-size: 11px;
   line-height: 125%;
   color: #9b99ae;
-  margin-left: 30px;
+  text-align: left;
+}
+.card:nth-of-type(2) {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.term::before {
+  content: 'X '!important;
 }
 
-.term-price::before {
-  content: 'X ';
-}
-
-.discount-val:before {
+.discount:before {
   content: '- ';
 }
 
-.discount-val {
+.discount {
   color: var(--blue);
 }
