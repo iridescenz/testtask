@@ -18,7 +18,6 @@ const Plan = ({ pageHeader }) => {
         ) : (
           <h3>План не выбран</h3>
         )}
-       
         {price === null ? '' : <div className='price'> {price}</div>}
         </div>
       {slots === '' ? '' : <div className='description'>{slots} слотов</div>}

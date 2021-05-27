@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Footer = ({ link, back, step, progress, stepName, success }) => {
-
   const price = useSelector((state) => state.price);
   const slots = useSelector((state) => state.slots);
   const period = useSelector((state) => state.period);
@@ -21,7 +20,6 @@ const Footer = ({ link, back, step, progress, stepName, success }) => {
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
             <div className='comeback'>
-              {' '}
               <IoIosArrowBack /> Вернуться назад
             </div>
           </Link>

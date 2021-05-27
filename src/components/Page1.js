@@ -28,18 +28,18 @@ const Page1 = () => {
                 key={el.ind}
                 onClick={(e) => {
                   e.preventDefault();
-                    store.dispatch({
-                      type: 'SET SLOTS',
-                      payload: el.slots,
-                    })
-                    store.dispatch({
-                      type: 'SET PLAN',
-                      payload: el.plan,
-                    })
-                    store.dispatch({
-                      type: 'SET PRICE',
-                      payload: el.price,
-                    })
+                  store.dispatch({
+                    type: 'SET SLOTS',
+                    payload: el.slots,
+                  });
+                  store.dispatch({
+                    type: 'SET PLAN',
+                    payload: el.plan,
+                  });
+                  store.dispatch({
+                    type: 'SET PRICE',
+                    payload: el.price,
+                  });
                 }}
               />
             ))}

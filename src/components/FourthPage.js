@@ -20,10 +20,12 @@ const FourthPage = () => {
           Начните запрашивать аккаунты из раздела «Подписка»
         </p>
         <Plan />
-        <div className='chosen-plan'>
-          Итого:{' '}
+        <div className='total-success'>
+          <div>Итого:</div>
           {period !== null && (
-            <span> {slots * price * +period.match(/[0-9]/gi)}</span>
+            <div className='price'>
+              {slots * price * +period.match(/[0-9]/gi)}
+            </div>
           )}
         </div>
         <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>

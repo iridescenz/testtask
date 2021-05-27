@@ -111,9 +111,9 @@ html {
 
 .plan > section {
   margin-bottom: 13px;
-  margin-left: 30px;
+  margin-left: 16px;
 }
-.plan >.bold-header {
+.plan > .bold-header {
   margin-bottom: 13px;
 }
 
@@ -216,19 +216,30 @@ div.card:active {
   margin-bottom:0 ;
   color: var(--grey);
 }
-
+h5.bold-header {
+  margin-left: 16px;
+}
 .price-card {
   font-size: 21px;
   font-weight: 600 !important;
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
+  width: 150px;
 }
 
 .price::before,
 .price-card::before {
   content: '$';
 }
+
+.price-card::after {
+  content: '/ месяц';
+  font-size: 12px;
+  width: 47px;
+  height: 15px;
+  font-weight: normal;
+} 
 
 .card:not(last-child) {
   color: var(--font-color);
@@ -406,14 +417,25 @@ footer input[type='button'].balance-check {
   border-radius: 2px 2px 2px 2px;
 }
 
-.total {
+div.total {
   display: flex;
-  text-align: right;
+  text-align: left;
   align-items: flex-start;
   margin-bottom: 14px;
 }
+div.total-success {
+  display: flex;
+  text-align: center;
+  width: calc(69px + 7px + 40px);
+  margin-bottom: 36px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 125%;
+  color: #9b99ae;
+  margin-right: 0 auto;
+}
 
-.total > span.price {
+.total > span.price, .total-success > div.price  {
   font-weight: bold;
   font-size: 16px;
   line-height: 107%;
@@ -423,8 +445,12 @@ footer input[type='button'].balance-check {
   margin-top: 0px;
 }
 
+.right-block {
+  display: flex;
+}
+
 .total:first-child {
-  margin-left: 103px;
+  margin-left: 105px;
   font-weight: 500;
   font-size: 12px;
   line-height: 125%;
@@ -435,13 +461,14 @@ footer input[type='button'].balance-check {
   display: flex;
   flex-direction: column;
   margin-right: 10px;
-  margin-left: 16px;
+  font-size: 14px;
   vertical-align: top;
 }
 
 .checkout {
   display: flex;
   flex-direction: row;
+  margin-left: 16px;
 }
 .balance > h2 {
   width: 79px;
