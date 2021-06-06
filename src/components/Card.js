@@ -6,27 +6,27 @@ const Card = ({ header, price, onClick }) => {
     { name: 'Стандарт+', slots: 15, countries: 74, price: 99 },
     { name: 'Премиум', slots: 10, countries: 90, price: 119 },
   ];
-
+  const cardContent = plans
+    .filter((elem) => elem.name === header)
+    .map((el) => {
+      return (
+        <>
+          <li key={el.slots}>От {el.slots} слотов,</li>
+          <li key={el.countries}>{el.countries} стран ГЕО,</li>
+          <li className='price' key={el.price}>
+            {el.price} {` за слот`}
+          </li>
+        </>
+      );
+    })
   return (
     <div className='card' onClick={onClick}>
       <h1>{header}</h1>
       <ul className='li-container'>
-        {plans
-          .filter((elem) => elem.name === header)
-          .map((el) => {
-            return (
-              <>
-                <li key={el.slots}>От {el.slots} слотов,</li>
-                <li key={el.countries}>{el.countries} стран ГЕО,</li>
-                <li className='price' key={el.price}>
-                  {el.price} {` за слот`}
-                </li>
-              </>
-            );
-          })}
+        {cardContent}
       </ul>
       <div className='price-card'>{price}</div>
-      <a href='' className='more'>
+      <a href='/' className='more'>
         Подробнее
       </a>
     </div>
