@@ -31,6 +31,11 @@ function reducers(state, action) {
         ...state,
         period: action.payload,
       };
+      case 'SET TOTAL':
+        return {
+          ...state,
+          total: action.payload,
+        };
     case 'SET DISCOUNT': {
       return {
         ...state,

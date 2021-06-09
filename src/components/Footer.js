@@ -3,16 +3,33 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { user } from './data';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import store from '../store';
 
 const Footer = ({ link, back, step, progress, stepName, success }) => {
   const price = useSelector((state) => state.price);
   const slots = useSelector((state) => state.slots);
   const period = useSelector((state) => state.period);
+  const plan = useSelector((state) => state.plan);
+  const total = useSelector((state) => state.total);
+  const discount = useSelector((state) => state.discount);
+  
+const discountValue = (100 - discount) / 100;
+
+period === null ?  store.dispatch({
+    type: 'SET TOTAL',
+    payload: (slots * price),
+  }) : 
+  store.dispatch({
+    type: 'SET TOTAL',
+    payload: (slots * price * (+period.match(/[0-9]/gi)))  * discountValue
+  })
+      
+ 
   return (
     <footer>
       <section className='next'>
         <Link to={link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-          <input className='next' type='button' value='Продолжить' />
+          <input className='next' disabled={plan === null ? true : false}  type='button' value='Продолжить' />
         </Link>
         {back ? (
           <Link
@@ -29,7 +46,7 @@ const Footer = ({ link, back, step, progress, stepName, success }) => {
         <div className='step-container'>
           <div className='step'>
             <span className='step-value'>Шаг {step}</span>
-            <span className='plan-value'>{stepName}</span>{' '}
+            <span className='plan-value'>{stepName}</span>
           </div>
           <div className='progress'>
             <span style={{ width: progress }}></span>
@@ -38,14 +55,7 @@ const Footer = ({ link, back, step, progress, stepName, success }) => {
       </section>
       <section className='total-balance'>
         <div className='total'>
-          <span>Итого:</span>{' '}
-          {period === null ? (
-            <span className='price'>{slots * price}</span>
-          ) : (
-            <span className='price'>
-              {slots * price * +period.match(/[0-9]/gi)}
-            </span>
-          )}
+          <span>Итого:</span><span  className='price'>{total}</span>
         </div>
         <div className='checkout'>
           <div className='balance'>
@@ -57,7 +67,7 @@ const Footer = ({ link, back, step, progress, stepName, success }) => {
             to={success}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
-            <input type='button' value='Запросить' className='balance-check' />
+            <input type='button' disabled={(plan === null )||(period === null) || (total > user.balance)? true : false} value='Запросить' className='balance-check' />
           </Link>
         </div>
       </section>

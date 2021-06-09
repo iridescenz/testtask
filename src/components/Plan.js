@@ -39,7 +39,8 @@ const Plan = ({ pageHeader }) => {
         <section>
         <div className='item-block'>
         <h3>Скидка</h3>
-          <div className='discount'>{discount}</div>
+          <div className='discount'>{`${discount}%`}</div>
+          
           </div>
           <div className='description'>на подписку</div>
           </section>

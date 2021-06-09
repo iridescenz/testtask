@@ -7,6 +7,7 @@ const initialState = {
   period: null,
   plan: null,
   price: null,
+  total : null
 };
 
 const store = createStore(reducers, initialState);

@@ -20,6 +20,6 @@ const content = [
   },
 ];
 
-const user = { firstName: 'Irina', lastName: 'Turenko', balance: 750 };
+const user = { firstName: 'Irina', lastName: 'Turenko', balance: 7500 };
 
 export { content, user };

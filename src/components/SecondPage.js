@@ -26,7 +26,7 @@ const SecondPage = () => {
                   type: 'SET DISCOUNT',
                   payload:
                     e.target.value.match(/[0-9]/gi) > 1
-                      ? `${+e.target.value.match(/[0-9]/gi) * 10 - 10}%`
+                      ? +e.target.value.match(/[0-9]/gi) * 10 - 10
                       : 0,
                 });
               }}
