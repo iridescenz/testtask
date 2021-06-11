@@ -4,8 +4,12 @@ import Footer from './Footer';
 import Plan from './Plan';
 import { BsChevronDown } from 'react-icons/bs';
 import store from '../store';
+import { useSelector } from 'react-redux';
+import { user } from './data';
 
 const SecondPage = () => {
+  const total = useSelector((state) => state.total);
+
   return (
     <div className='page-container'>
       <Header />
@@ -51,6 +55,7 @@ const SecondPage = () => {
         step='2/3'
         progress='66%'
         stepName='План подписки'
+        success={user.balance > total ? '/success' : ''}
       />
     </div>
   );
